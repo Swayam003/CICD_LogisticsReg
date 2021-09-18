@@ -1,6 +1,6 @@
 base:
   project: diabetes-project
-  random_state: 42
+  random_state: 355
   target_col: Outcome
 
 data_source:
@@ -10,8 +10,10 @@ load_data:
   raw_dataset_csv: data/raw/diabetes.csv
 
 split_data:
-  train_path: data/processed/train_diabetes.csv
-  test_path: data/processed/test_diabetes.csv
+  x_train_path: data/processed/x_train_diabetes.csv
+  y_train_path: data/processed/y_train_diabetes.csv
+  x_test_path: data/processed/x_test_diabetes.csv
+  y_test_path: data/processed/y_test_diabetes.csv
   test_size: 0.2
 
 estimators:

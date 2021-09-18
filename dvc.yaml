@@ -8,3 +8,13 @@ stages:
     outs:
     - data/raw/diabetes.csv
 
+  split_data:
+    cmd: python src/split_data.py --config=params.yaml
+    deps:
+      - src/split_data.py
+      - data/raw/diabetes.csv
+    outs:
+      - data/processed/x_test_diabetes.csv
+      - data/processed/x_train_diabetes.csv
+      - data/processed/y_test_diabetes.csv
+      - data/processed/y_train_diabetes.csv
