@@ -19,7 +19,7 @@ dvc add data_given/diabetes.csv
 git add . && git commit -m "first commit"
 ```
 ```bash
-git remote add origin https://github.com/Swayam003/LogisticsReg_CICD.git
+git remote add origin https://github.com/Swayam003/CICD_LogisticsReg.git
 git branch -M main
 git push origin main
 ```
