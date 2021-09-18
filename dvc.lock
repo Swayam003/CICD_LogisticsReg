@@ -23,8 +23,8 @@ stages:
       md5: 60acca81995dc9744b499005ecfe6f2a
       size: 24059
     - path: src/split_data.py
-      md5: bfac4cf6f2362f35149ff887c5d02845
-      size: 3754
+      md5: aa04da06f5c7801a0aaddd0410d93050
+      size: 3905
     outs:
     - path: data/processed/x_test_diabetes.csv
       md5: 8c9977336f056fe269d94b36803d5800
@@ -38,6 +38,9 @@ stages:
     - path: data/processed/y_train_diabetes.csv
       md5: 71b90ff3a262ba6879e86e7a0f3566f4
       size: 1626
+    - path: saved_models/scalarr.joblib
+      md5: 329ce0fae6259fd622da1a7947af3cdf
+      size: 786
   train_and_evaluate:
     cmd: python src/train_and_evaluate.py --config=params.yaml
     deps:

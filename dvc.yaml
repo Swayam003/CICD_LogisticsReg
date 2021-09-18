@@ -18,6 +18,7 @@ stages:
       - data/processed/x_train_diabetes.csv
       - data/processed/y_test_diabetes.csv
       - data/processed/y_train_diabetes.csv
+      - saved_models/scalarr.joblib
 
   train_and_evaluate:
     cmd: python src/train_and_evaluate.py --config=params.yaml

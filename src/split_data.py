@@ -8,6 +8,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from get_data import read_params
+import joblib
 
 def preprocess(config_path):
     config = read_params(config_path)
@@ -44,10 +45,14 @@ def preprocess(config_path):
 
 def scalling_data(confiq_path):
     config, data = preprocess(confiq_path)
+    model_dir = config["model_dir"]
     x = data.drop(columns=['Outcome'])
     scalar = StandardScaler()
     X_scaled = scalar.fit_transform(x)
     Xscaled = pd.DataFrame(X_scaled, columns=['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age'])
+    model_path = os.path.join(model_dir, "scalarr.joblib")
+    joblib.dump(scalar, model_path)
+
     return config,data,Xscaled
 
 def split_and_saved_data(config_path):
