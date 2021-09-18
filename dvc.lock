@@ -38,3 +38,25 @@ stages:
     - path: data/processed/y_train_diabetes.csv
       md5: 71b90ff3a262ba6879e86e7a0f3566f4
       size: 1626
+  train_and_evaluate:
+    cmd: python src/train_and_evaluate.py --config=params.yaml
+    deps:
+    - path: data/processed/x_test_diabetes.csv
+      md5: 8c9977336f056fe269d94b36803d5800
+      size: 21508
+    - path: data/processed/x_train_diabetes.csv
+      md5: c8804dff6fbd6a188720a4cc295211d4
+      size: 85626
+    - path: data/processed/y_test_diabetes.csv
+      md5: 6b7019b95ebaba796c8b5bbca5498970
+      size: 414
+    - path: data/processed/y_train_diabetes.csv
+      md5: 71b90ff3a262ba6879e86e7a0f3566f4
+      size: 1626
+    - path: src/train_and_evaluate.py
+      md5: 94aaa0f0ceb19460be377e2e4fd1089d
+      size: 1527
+    outs:
+    - path: saved_models/model.joblib
+      md5: 8ce070e76752a3d49cf6bbd6d2eaaf2e
+      size: 960
